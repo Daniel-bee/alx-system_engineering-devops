@@ -1,2 +1,2 @@
 #!/bin/bash
-mv betty /tmp/holberton/ \
+touch /tmp/betty\ mv betty /tmp/holberton/ \
