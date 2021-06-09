@@ -1,2 +1,2 @@
 #!/bin/bash
-echo realpath "$PWD"\n
+echo "$PWD\n"
