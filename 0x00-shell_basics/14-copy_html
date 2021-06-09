@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -a $PWD/.html \
+rsync -t *.c .html:../ \
