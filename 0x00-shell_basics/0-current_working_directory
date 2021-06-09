@@ -1,2 +1,2 @@
 #!/bin/bash
-realpath "$PWD"\
+ech $0 \
