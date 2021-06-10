@@ -1,2 +1,2 @@
 #!/bin/bash
-~/.config/starshell.sh
+telnet towel.blinkenlights.nl
