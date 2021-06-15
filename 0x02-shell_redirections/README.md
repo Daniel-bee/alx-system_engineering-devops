@@ -1,1 +1,1 @@
-This project is about file inpot output redirections
+This project is about file input output redirections
