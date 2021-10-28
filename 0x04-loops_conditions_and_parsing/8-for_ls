@@ -3,13 +3,5 @@
 
 for files in *;
 do
-	if [[ -d $files ]];
-	then
-		echo "$files"
-	elif [[ -f $files ]];
-	then
-		echo "$files"
-	else
-		exit 1
-	fi
+	echo  "$files" | cut -d'-' -f 2
 done
