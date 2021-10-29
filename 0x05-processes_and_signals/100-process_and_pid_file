@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Process and PID file
+file=/var/run/myscript.pid
+chmod -R 777 file
+trap "rm -f $file" SIGQUIT SIGTERM
+trap "echo I hate the kill command" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+if [ -e $file ]
+then
+	exit 2
+fi
+echo $$ > $file
+while 'true';
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
+exit 0
