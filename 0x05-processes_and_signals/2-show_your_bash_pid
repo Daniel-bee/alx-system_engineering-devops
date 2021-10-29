@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2059
+#Bash script that displays lines containing the bash word
+ps -auxf bash
