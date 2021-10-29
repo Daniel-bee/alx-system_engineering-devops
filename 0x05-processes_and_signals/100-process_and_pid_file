@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 #Process and PID file
-file=/var/run/myscript.pid
-trap 'rm -f $file ' SIGQUIT SIGTERM
+sudo touch /var/run/myscript.pid
+sudo bash -c 'echo $$ > var/run/myscript.pid'
+
+trap 'sudo m -f /var/run/myscript.pid' SIGQUIT SIGTERM
 trap "echo I hate the kill command" SIGTERM
 trap "echo Y U no love me?!" SIGINT
-if [ -e $file ]
-then
-	exit 2
-fi
-echo $$ > $file
-while 'true';
-do
+
+while 'true'; do
 	echo "To infinity and beyond"
 	sleep 2
 done
 exit 0
+
