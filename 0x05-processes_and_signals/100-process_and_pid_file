@@ -2,9 +2,9 @@
 #Process and PID file
 file=/var/run/myscript.pid
 sudo touch -- "$file"
-echo $$ > sudo $file
+sudo bash -c 'echo $$ > /var/run/holbertonscript.pid'
 
-trap 'sudo m -f $file' SIGQUIT SIGTERM
+trap 'sudo m -f /var/run/holbertonscript.pid' SIGQUIT SIGTERM
 trap "echo I hate the kill command" SIGTERM
 trap "echo Y U no love me?!" SIGINT
 
