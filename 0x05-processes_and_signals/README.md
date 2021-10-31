@@ -35,4 +35,24 @@ Because of this last little bit of information, the process will remain in the o
 process table as a zombie process, indicating that it is not to be scheduled for further execution, 
 but that it cannot be completely removed (and its process ID cannot be reused) 
 until it has been determined that the exit status is no longer needed.
+Terminal #0
+sylvain@ubuntu$ gcc 102-zombie.c -o zombie
+sylvain@ubuntu$ ./zombie 
+Zombie process created, PID: 13527
+Zombie process created, PID: 13528
+Zombie process created, PID: 13529
+Zombie process created, PID: 13530
+Zombie process created, PID: 13531
+^C
+sylvain@ubuntu$
+
+Terminal #1
+sylvain@ubuntu$ ps aux | grep -e 'Z+.*<defunct>'
+sylvain  13527  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
+sylvain  13528  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
+sylvain  13529  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
+sylvain  13530  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
+sylvain  13531  0.0  0.0      0     0 pts/0    Z+   01:19   0:00 [zombie] <defunct>
+sylvain  13533  0.0  0.1  10460   964 pts/2    S+   01:19   0:00 grep --color=ato -e Z+.*<defunct>
+sylvain@ubuntu$ 
 ```
