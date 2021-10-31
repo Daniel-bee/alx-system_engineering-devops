@@ -1,10 +1,8 @@
 ## 0x05. Processes and signals
 # Linux signals
 ```
-On Unix-like operating systems such as Linux, signals are software interrupts. They provide a way for the user (or a process) to directly communicate with a process.
-
-kill -TERM 1234 5678
-Same as the previous command.
+On Unix-like operating systems such as Linux, signals are software interrupts. 
+They provide a way for the user (or a process) to directly communicate with a process.
 
 kill -l
 List all available signals. Example output:
@@ -25,9 +23,16 @@ List all available signals. Example output:
 ```
 # daemons (&)
 ```
-Programs that are detached from the terminal and running in the background are called daemons or processes, need to be managed. The general minimum set of instructions is: start, restart and stop. The most popular way of doing so on Unix system is to use the init scripts.
+Programs that are detached from the terminal and running in the background are 
+called daemons or processes, need to be managed. The general minimum set of 
+instructions is: start, restart and stop.The most popular way of doing so on
+Unix system is to use the init scripts.
 ```
 # Zombie Process
 ```
-When a process finishes execution, it will have an exit status to report to its parent process. Because of this last little bit of information, the process will remain in the operating system’s process table as a zombie process, indicating that it is not to be scheduled for further execution, but that it cannot be completely removed (and its process ID cannot be reused) until it has been determined that the exit status is no longer needed.
+When a process finishes execution, it will have an exit status to report to its parent process. 
+Because of this last little bit of information, the process will remain in the operating system’s 
+process table as a zombie process, indicating that it is not to be scheduled for further execution, 
+but that it cannot be completely removed (and its process ID cannot be reused) 
+until it has been determined that the exit status is no longer needed.
 ```
