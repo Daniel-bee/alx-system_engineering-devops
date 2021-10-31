@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 int infinite_while(void);
 /**
@@ -15,7 +16,7 @@ int main(void)
 		if (fork() == 0)
 		{
 			printf("Zombie process created, PID: %d\n", getpid());
-			return (0);
+			exit(0);
 		}
 	}
 	for (i = 0; i < 5; i++)
@@ -31,8 +32,6 @@ int main(void)
 int infinite_while(void)
 {
 	while (1)
-	{
 		sleep(1);
-	}
 	return (0);
 }
