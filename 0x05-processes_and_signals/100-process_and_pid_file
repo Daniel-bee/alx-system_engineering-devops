@@ -9,8 +9,8 @@ echo $$ > /var/run/myscript.pid
 FILE=/var/run/myscript.pid
 
 trap 'echo "Y U no love me?!"' 2
-trap 'echo "I hate the kill command";rm $FILE;exit 0' 15
-trap 'rm $FILE;exit 0' 3
+trap 'echo "I hate the kill command";rm -rf $FILE;exit 0' 15
+trap 'rm -rf $FILE;exit 0' 3
 
 while 'true'
 do
