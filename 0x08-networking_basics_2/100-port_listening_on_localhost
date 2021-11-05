@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Bash script that listens on port 98 on localhost.
 
-telnnet -n localhost 98
+netcat -nlp localhost 98
