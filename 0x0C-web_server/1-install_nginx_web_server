@@ -7,7 +7,7 @@ sudo apt-get install -y nginx
 sudo mkdir -p /var/www/html
 sudo chown -R $USER:$USER /var/www
 sudo touch /var/www/html/index.html
-echo " School" > /var/www/html/index.html
+echo "Hello School" > /var/www/html/index.html
 
 sudo service nginx restart
 
