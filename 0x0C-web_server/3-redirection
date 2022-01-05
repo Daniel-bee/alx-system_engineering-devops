@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx and start it
 apt-get -y install nginx
+ufw allow 'Nginx HTTP'
 echo "Hello World!" >> /var/www/html/index.html
 sudo chown -R $USER:$USER /var/www/html
 sudo chmod -R 755 /var/www
