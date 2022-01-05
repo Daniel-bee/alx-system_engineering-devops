@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Web servers are the piece of software generating
 # and serving HTML pages, let’s install one!
-sudo apt-get update
-sudo apt-get install -y nginx
+#sudo apt-get update
+#sudo apt-get install -y nginx
 
 #sudo mkdir -p /var/www/html
 #sudo chown -R $USER:$USER /var/www
