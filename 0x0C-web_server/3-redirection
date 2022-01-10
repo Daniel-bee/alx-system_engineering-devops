@@ -8,4 +8,4 @@ echo "Hello World!" > /var/www/html/index.html
 otherdefault="/etc/nginx/sites-enabled/default"
 location="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=fHI8X4OXluQ;\n\t}\n"
 sudo sed -i "30i $location" "$otherdefault"
-sudo service nginx restar
+sudo service nginx restart
