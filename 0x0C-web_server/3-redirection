@@ -3,5 +3,5 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo "Hello World!" > /var/www/html/index.html
-sed -i '/dani-bee.tech;/ a rewrite ^/redirect_me https://www.youtube.com/watch?v=kPRA0W1kECg&ab_channel=TimoBingmann  permanent;' /etc/nginx/sites-available/default
+sed -i 's//server_name _;/server_name _; a rewrite ^/redirect_me https://www.youtube.com/watch?v=kPRA0W1kECg&ab_channel=TimoBingmann  permanent;' /etc/nginx/sites-available/default
 service nginx start
