@@ -1,23 +1,8 @@
 #!/usr/bin/env bash
 # Script that installs Nginx server and redirects
-CONFIG_FILE="/etc/nginx/sites-available/default"
-# install nginx
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 
-# update index.html file
-echo 'Holberton School' > /usr/share/nginx/html/index.html
-
-# update config file to redirect
-printf %s "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /usr/share/nginx/html;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 http://google.com/;
-    }
-}" > $CONFIG_FILE
-
-# start nginx after reloading config
-service nginx start
+echo "Hello World!" > /var/www/html/index.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
