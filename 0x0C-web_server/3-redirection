@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Script that installs Nginx server and redirects /redirect_me
 sudo apt-get -y update
-sudo apt-get -y install nginxsudo mkdir -p /var/www/html
+sudo apt-get -y install nginx
+sudo mkdir -p /var/www/html
 sudo chown -R $USER:$USER /var/www
 sudo touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
