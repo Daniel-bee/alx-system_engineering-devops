@@ -4,17 +4,17 @@
 
 parameters()
 {
-    DREC=$(dig $sd.$1 | awk '/ANSWER SECTION:/ {getline; print $4}')
-    IP=$(dig $sd.$1 | awk '/ANSWER SECTION:/ {getline; print $5}')
+    DREC=$(dig "$sd.$1" | awk '/ANSWER SECTION:/ {getline; print $4}')
+    IP=$(dig "$sd.$1" | awk '/ANSWER SECTION:/ {getline; print $5}')
 }
 
-if [ -z $2 ]; then
+if [ -z "$2" ]; then
     for sd  in "www" "lb-01" "web-01" "web-02"; do
-    parameters $1
+    parameters "$1"
     echo "The subdomain ${sd} is a $DREC record and points to ${IP}"
     done
 else
     sd=$2
-    parameters $1
-    echo "The subdomain ${sd} is a $record record and points to ${IP}"
+    parameters "$1"
+    echo "The subdomain ${sd} is a $DREC record and points to ${IP}"
 fi
