@@ -32,6 +32,7 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
+
 frontend www-http
         bind *:80
         stats uri /haproxy?stats
@@ -45,14 +46,11 @@ frontend www-https
         use_backend letsencrypt-backend if letsencrypt-acl
         default_backend www-backend
 
-listen 646-lb-01
-	bind *:80
-	mode http
-	balance roundrobin
-	option httpclose
-	option forwardfor
-	server 646-web-02 3.215.22.101:80 check
-	server 646-web-01 34.139.211.56:80 check
+backend www-backend
+        balance roundrobin
+        redirect scheme https if !{ ssl_fc }
+        server 646-web-02 3.215.22.101:80 check
+        server 646-web-01 34.139.211.56:80 check
 
 backend letsencrypt-backend
         server letsencrypt 127.0.0.1:54321
