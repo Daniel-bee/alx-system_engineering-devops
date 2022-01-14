@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Configure your domain zone so that the subdomain 
+# www points to your load-balancer IP (lb-01).
+
+parameters()
+{
+    DREC=$(dig $sd.$1 | awk '/ANSWER SECTION:/ {getline; print $4}')
+    IP=$(dig $dn.$1 | awk '/ANSWER SECTION:/ {getline; print $5}')
+}
+
+if [ -z $2 ]; then
+    for sd  in "www" "lb-01" "web-01" "web-02"; do
+    parameters $1
+    echo "The subdomain ${sd} is a $DREC record and points to ${IP}"
+    done
+else
+    sd=$2
+    parameters $1
+    echo "The subdomain ${sd} is a $record record and points to ${IP}"
+fi
