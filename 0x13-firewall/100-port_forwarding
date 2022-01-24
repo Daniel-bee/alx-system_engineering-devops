@@ -75,11 +75,4 @@ COMMIT
 -A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
 
 # don't delete the 'COMMIT' line or these rules won't be processed
--A FORWARD -o lxcbr0 -j ACCEPT
--A FORWARD -i lxcbr0 -j ACCEPT
-
--A INPUT -p udp --dport 53 -i enp0s8 -m state --state NEW -j ACCEPT
--A INPUT -p tcp --dport 53 -i enp0s8 -m state --state NEW -j ACCEPT
--A INPUT -p udp --dport 67 -i enp0s8 -m state --state NEW -j ACCEPT
--A INPUT -p tcp --dport 67 -i enp0s8 -m state --state NEW -j ACCEPT
 COMMIT
