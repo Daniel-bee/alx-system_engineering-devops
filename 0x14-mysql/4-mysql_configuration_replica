@@ -8,5 +8,5 @@ log-error       = /var/log/mysql/error.log
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 #bind-address    = 34.139.211.56
-server-id       = 1
+server-id       = 2
 binlog_do_db    = tyrell_corp
