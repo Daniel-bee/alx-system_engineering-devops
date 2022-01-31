@@ -20,12 +20,12 @@ if __name__ == "__main__":
         """
         count = 0
         for value in todo_res:
-            if value['completed']:
+            if value.get('completed'):
                 count += 1
         return count
 
     print("Employee {} is done with tasks({}/{}):".format(
         user_res.get('name'), task_completed(todo_res), len(todo_res)))
     for listdict in todo_res:
-        if listdict['completed']:
+        if listdict.get('completed'):
             print("\t {}".format(listdict.get('title')))
