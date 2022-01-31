@@ -15,6 +15,9 @@ if __name__ == "__main__":
         url, sys.argv[1])).json()
 
     with open('{}.csv'.format(sys.argv[1]), 'w', newline='') as csvfile:
+        """
+            export csv file userId.csv
+        """
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for row in todo_res:
             writer.writerow([sys.argv[1],
