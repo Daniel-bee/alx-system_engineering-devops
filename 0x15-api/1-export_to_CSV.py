@@ -15,11 +15,11 @@ if __name__ == "__main__":
         url, sys.argv[1])).json()
 
     with open(f'{sys.argv[1]}.csv', 'w', newline='') as csvfile:
-        fieldnames = ["userId", "id", "completed", "title"]
 
-        writer = csv.DictWriter(
-                csvfile, quoting=csv.QUOTE_ALL, fieldnames=fieldnames)
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
         for row in todo_res:
-            row['id'] = "Antonette"
-            writer.writerow(row)
+            writer.writerow([sys.argv[1],
+                            user_res.get('username'),
+                            row.get('completed'),
+                            row.get('title')])
