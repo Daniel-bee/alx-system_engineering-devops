@@ -14,7 +14,7 @@ if __name__ == "__main__":
     todo_res = requests.get('{}/todos?userId={}'.format(
         url, sys.argv[1])).json()
 
-    with open(f'{sys.argv[1]}.csv', 'w', newline='') as csvfile:
+    with open('{}.csv'.format(sys.argv[1]), 'w', newline='') as csvfile:
 
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
 
