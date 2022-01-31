@@ -25,7 +25,7 @@ if __name__ == "__main__":
         return count
 
     print("Employee {} is done with tasks({}/{}):".format(
-        user_res['name'], task_completed(todo_res), len(todo_res)))
+        user_res.get('name'), task_completed(todo_res), len(todo_res)))
     for listdict in todo_res:
         if listdict['completed']:
-            print("\t {}".format(listdict['title']))
+            print("\t {}".format(listdict.get('title')))
