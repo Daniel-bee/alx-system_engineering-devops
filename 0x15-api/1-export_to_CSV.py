@@ -15,7 +15,7 @@ if __name__ == "__main__":
         url, sys.argv[1])).json()
 
     with open(f'{sys.argv[1]}.csv', 'w', newline='') as csvfile:
-        fieldnames = ["userId", "id", "title", "completed"]
+        fieldnames = ["userId", "id", "completed", "title"]
 
         writer = csv.DictWriter(
                 csvfile, quoting=csv.QUOTE_ALL, fieldnames=fieldnames)
