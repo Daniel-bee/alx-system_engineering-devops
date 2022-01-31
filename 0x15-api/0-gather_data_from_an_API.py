@@ -10,7 +10,8 @@ import sys
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com'
     user_res = requests.get('{}/users/{}'.format(url, sys.argv[1])).json()
-    todo_res = requests.get('{}/todos?userId={}'.format(url, sys.argv[1])).json()
+    todo_res = requests.get('{}/todos?userId={}'.format(
+        url, sys.argv[1])).json()
 
     def task_completed(todo_res):
         """
@@ -22,8 +23,8 @@ if __name__ == "__main__":
                 count += 1
         return count
 
-    print(f"Employee {} is done with \
-            tasks({:d}/{:d}):".format(user_res['name'], task_completed(todo_res), len(todo_res)))
+    print("Employee {} is done with tasks({:d}/{:d}):".format(
+        user_res['name'], task_completed(todo_res), len(todo_res)))
     for listdict in todo_res:
         if listdict['completed']:
             print("\t{}".format(listdict['title']))
