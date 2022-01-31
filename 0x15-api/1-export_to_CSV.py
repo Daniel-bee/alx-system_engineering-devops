@@ -13,7 +13,7 @@ if __name__ == "__main__":
     user_res = requests.get('{}/users/{}'.format(url, sys.argv[1])).json()
     todo_res = requests.get('{}/todos?userId={}'.format(
         url, sys.argv[1])).json()
-
+    user = user_res.get('username')
     with open('{}.csv'.format(sys.argv[1]), 'w', newline='') as csvfile:
         """
             export csv file userId.csv
@@ -21,6 +21,6 @@ if __name__ == "__main__":
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for row in todo_res:
             writer.writerow([sys.argv[1],
-                            user_res.get('username'),
+                            user,
                             row.get('completed'),
                             row.get('title')])
