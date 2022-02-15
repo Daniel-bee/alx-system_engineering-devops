@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
         If not a valid subreddit, return 0
     """
     res = requests.get('https://reddit.com/r/{}/about.json'.format(subreddit))
-    if res:
-        return res.json()['data']['subscribers']
+    if not res:
+        return 0
     else:
-        return (0)
+        return res.json()['data']['subscribers'
