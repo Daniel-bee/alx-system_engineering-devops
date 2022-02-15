@@ -11,4 +11,5 @@ def number_of_subscribers(subreddit):
     res = requests.get('https://reddit.com/r/{}/about.json'.format(subreddit))
     if res:
         return res.json()['data']['subscribers']
-    return (0)
+    else:
+        return 0
