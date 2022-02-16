@@ -3,4 +3,4 @@
 
 ea79cac3dd0f42bb7e7f35cfdfcecfba
 a2a5547b4a246cdddf9172933eb452a25b811717
-"ntp.in_sync".over("*").last(2).count_by_status()
+avg:system.cpu.user{*}
