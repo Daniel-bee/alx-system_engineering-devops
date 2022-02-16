@@ -3,4 +3,5 @@
 
 ea79cac3dd0f42bb7e7f35cfdfcecfba
 a2a5547b4a246cdddf9172933eb452a25b811717
-avg:system.io.r_s{*} by {host}, avg:system.io.w_s{*} by {host}
+avg:system.io.r_s{*}
+avg:system.io.w_s{*}
